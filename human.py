@@ -7,7 +7,7 @@ class Human(Player):
 
     def choose_gesture(self, gestures):
         print (" ")
-        print("Choose your gesture: ")
+        print(f"{self.name}: Choose your gesture: ")
         loop = True
         while loop == True:
             for gesture in gestures:
