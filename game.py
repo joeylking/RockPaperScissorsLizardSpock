@@ -4,6 +4,7 @@ from computer import Computer
 class Game:
     def __init__(self):
         self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        self.players_list = []
 
     def welcome(self):
         print ("____________________________________________________")
@@ -44,25 +45,31 @@ class Game:
                 print ("Invalid option. Try again.")
                 self.choose_Players()
         
-        
-
     def create_players(self, number_of_players):
         if number_of_players == 1:
             player1 = Human()
-            player1.choose_name()
-            self.player2 = Computer()
+            player2 = Computer()
+            self.players_list.append(player1)
+            self.players_list.append(player2)
+            self.start_game()
         else:
-            self.player1 = Human()
-            self.player1.choose_name()
-            self.player2 = Human()
-            self.player2.choose_name()
-
+            player1 = Human()
+            player2 = Human()
+            self.players_list.append(player1)
+            self.players_list.append(player2)
+            self.start_game()
 
     def start_game(self):
-        pass
+        player1 = self.players_list[0]
+        player2 = self.players_list[1]
+        player1.choose_gesture(self.gestures_list)
+        player2.choose_gesture(self.gestures_list)
+        self.compare(player1, player2)
 
     def compare(self, player1, player2):
-        pass
+        if (player1.gesture == player2.gesture):
+            print ("Draw")
+        elif (player1.gesture == "Rock") and (player2.gesture == "Sc")
 
     def declare_winner(self, winner):
         pass
