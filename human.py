@@ -6,11 +6,11 @@ class Human(Player):
         super().__init__()
 
     def choose_gesture(self, gestures):
+        print (" ")
         print("Choose your gesture: ")
         loop = True
         while loop == True:
             for gesture in gestures:
-                print (" ")
                 print(f"{gestures.index(gesture) + 1} - {gesture}")
             i = int(input()) - 1
             if i >= 0 and i < len(gestures):
