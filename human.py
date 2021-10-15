@@ -7,10 +7,16 @@ class Human(Player):
 
     def choose_gesture(self, gestures):
         print("Choose your gesture: ")
-        for gesture in gestures:
-            print(f"{gestures.index(gesture) + 1} - {gesture}")
-        i = int(input()) - 1
-        self.current_gesture = gestures[i]
+        loop = True
+        while loop == True:
+            for gesture in gestures:
+                print(f"{gestures.index(gesture) + 1} - {gesture}")
+            i = int(input()) - 1
+            if i >= 0 and i < len(gestures):
+                loop = False
+                self.gesture = gestures[i]
+            else:
+                input("Invalid choice. Try again: ")
         
 
     def choose_name(self):

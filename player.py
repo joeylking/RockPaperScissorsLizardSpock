@@ -1,5 +1,5 @@
 class Player:
     def __init__(self):
-        self.wins = []
-        self.current_gesture = ""
-        self.name = ""
+        self.wins = 0
+        self.gesture = ""
+        #self.name = ""

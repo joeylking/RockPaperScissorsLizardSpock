@@ -8,5 +8,5 @@ class Computer(Player):
 
     def choose_gesture(self, gestures):
         i = random.randint(0, len(gestures) -1)
-        self.current_gesture = gestures[i]
+        self.gesture = gestures[i]
         print(f"The computer has chosen {gestures[i]}")

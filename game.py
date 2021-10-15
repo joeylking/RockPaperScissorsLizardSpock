@@ -62,6 +62,7 @@ class Game:
     def start_game(self):
         player1 = self.players_list[0]
         player2 = self.players_list[1]
+        print(player1.name, player2.name)
         player1.choose_gesture(self.gestures_list)
         player2.choose_gesture(self.gestures_list)
         self.compare(player1, player2)
@@ -82,37 +83,52 @@ class Game:
             print(f"{player1.name} crushes {player2.name}'s scissors with rock.")
             player1.wins += 1
         elif ((player1.gesture == "Lizard") and (player2.gesture == "Spock")):
+            print(f"{player1.name} poisons {player2.name}'s Spock with a lizard.")
             player1.wins += 1
         elif ((player1.gesture == "Spock") and (player2.gesture == "Scissors")):
+            print(f"{player1.name} vaporizes {player2.name}'s scissors with Spock.")
             player1.wins += 1
         elif ((player1.gesture == "Scissors") and (player2.gesture == "Lizard")):
+            print(f"{player1.name} cuts {player2.name}'s lizard with scissors.")
             player1.wins += 1
         elif ((player1.gesture == "Lizard") and (player2.gesture == "Paper")):
+            print(f"{player1.name} eats {player2.name}'s paper with a lizard.")
             player1.wins += 1
         elif ((player1.gesture == "Paper") and (player2.gesture == "Spock")):
+            print(f"{player1.name} disproves {player2.name}'s Spock with a paper.")
             player1.wins += 1
         elif ((player1.gesture == "Spock") and (player2.gesture == "Rock")):
+            print(f"{player1.name} vaporizes {player2.name}'s rock with Spock.")
             player1.wins += 1
         elif ((player2.gesture == "Rock") and (player1.gesture == "Scissors")):
             print(f"{player2.name} crushes {player1.name}'s scissors with rock.")
             player2.wins += 1
         elif ((player2.gesture == "Scissors") and (player1.gesture == "Paper")):
+            print(f"{player2.name} cuts {player1.name}'s paper with scissors.")
             player2.wins += 1
         elif ((player2.gesture == "Paper") and (player1.gesture == "Rock")):
+            print(f"{player2.name} covers {player1.name}'s rock with paper.")
             player2.wins += 1
         elif ((player2.gesture == "Rock") and (player1.gesture == "Lizard")):
+            print(f"{player2.name} crushes {player1.name}'s scissors with rock.")
             player2.wins += 1
         elif ((player2.gesture == "Lizard") and (player1.gesture == "Spock")):
+            print(f"{player2.name} poisons {player1.name}'s Spock with a lizard.")
             player2.wins += 1
         elif ((player2.gesture == "Spock") and (player1.gesture == "Scissors")):
+            print(f"{player2.name} vaporizes {player1.name}'s scissors with Spock.")
             player2.wins += 1
         elif ((player2.gesture == "Scissors") and (player1.gesture == "Lizard")):
+            print(f"{player2.name} cuts {player1.name}'s lizard with scissors.")
             player2.wins += 1
         elif ((player2.gesture == "Lizard") and (player1.gesture == "Paper")):
+            print(f"{player2.name} eats {player1.name}'s paper with a lizard.")
             player2.wins += 1
         elif ((player2.gesture == "Paper") and (player1.gesture == "Spock")):
+            print(f"{player2.name} disproves {player1.name}'s Spock with a paper.")
             player2.wins += 1
         elif ((player2.gesture == "Spock") and (player1.gesture == "Rock")):
+            print(f"{player2.name} vaporizes {player1.name}'s rock with Spock.")
             player2.wins += 1
         else:
             print ("error with comparing.")
@@ -121,7 +137,11 @@ class Game:
                 self.declare_winner(player1.name)
         elif player2.wins == 2:
             self.declare_winner(player2.name)
+        else:
+            player1.choose_gesture(self.gestures_list)
+            player2.choose_gesture(self.gestures_list)
+            self.compare(player1, player2)
             
 
     def declare_winner(self, winner):
-        pass
+        print(f"{winner} wins!")
