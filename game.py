@@ -35,10 +35,10 @@ class Game:
             num_input = input ("How many players?: ")
             if num_input == "1":
                 num_check = True
-                print ("One player.")
+                print ("One player chosen.")
                 self.create_players(1)
             elif num_input == "2":
-                print ("Two players.")
+                print ("Two players chosen.")
                 num_check = True
                 self.create_players(2)
             else:
@@ -62,7 +62,9 @@ class Game:
     def start_game(self):
         player1 = self.players_list[0]
         player2 = self.players_list[1]
-        print(player1.name, player2.name)
+        print ("____________________________________________________")
+        print(f"{player1.name} Vs. {player2.name}")
+        print (" ")
         player1.choose_gesture(self.gestures_list)
         player2.choose_gesture(self.gestures_list)
         self.compare(player1, player2)
@@ -142,6 +144,6 @@ class Game:
             player2.choose_gesture(self.gestures_list)
             self.compare(player1, player2)
             
-
     def declare_winner(self, winner):
+        print ("____________________________________________________")
         print(f"{winner} wins!")

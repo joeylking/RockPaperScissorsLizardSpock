@@ -10,6 +10,7 @@ class Human(Player):
         loop = True
         while loop == True:
             for gesture in gestures:
+                print (" ")
                 print(f"{gestures.index(gesture) + 1} - {gesture}")
             i = int(input()) - 1
             if i >= 0 and i < len(gestures):
@@ -18,7 +19,7 @@ class Human(Player):
             else:
                 input("Invalid choice. Try again: ")
         
-
     def choose_name(self):
+        print (" ")
         name = input(f"Enter players's name: ")
         return name
