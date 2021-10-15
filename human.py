@@ -1,7 +1,7 @@
 from player import Player
 
 class Human(Player):
-    def __init__(self, name):
+    def __init__(self):
         super().__init__()
 
     def choose_gesture(self, gestures):
@@ -12,6 +12,6 @@ class Human(Player):
         self.current_gesture = gestures[i]
         
 
-    def choose_name(self, player):
+    def choose_name(self):
         name = input(f"Enter {player}'s name: ")
         self.name = name

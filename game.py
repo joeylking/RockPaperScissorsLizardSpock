@@ -1,3 +1,6 @@
+from human import Human
+from computer import Computer
+
 class Game:
     def __init__(self):
         self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
@@ -32,17 +35,28 @@ class Game:
             if num_input == "1":
                 num_check = True
                 print ("One player.")
+                self.create_players(1)
             elif num_input == "2":
                 print ("Two players.")
                 num_check = True
+                self.create_players(2)
             else:
                 print ("Invalid option. Try again.")
                 self.choose_Players()
         
         
 
-    def create_players(self):
-        pass
+    def create_players(self, number_of_players):
+        if number_of_players == 1:
+            player1 = Human()
+            player1.choose_name()
+            self.player2 = Computer()
+        else:
+            self.player1 = Human()
+            self.player1.choose_name()
+            self.player2 = Human()
+            self.player2.choose_name()
+
 
     def start_game(self):
         pass
