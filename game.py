@@ -24,6 +24,8 @@ class Game:
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
         print (" ")
+        print ("It is best out of 3 games.")
+        print (" ")
         self.choose_Players()
 
 
@@ -82,7 +84,7 @@ class Game:
             print(f"{player1.name} covers {player2.name}'s rock with paper.")
             player1.wins += 1
         elif ((player1.gesture == "Rock") and (player2.gesture == "Lizard")):
-            print(f"{player1.name} crushes {player2.name}'s scissors with rock.")
+            print(f"{player1.name} crushes {player2.name}'s lizard with rock.")
             player1.wins += 1
         elif ((player1.gesture == "Lizard") and (player2.gesture == "Spock")):
             print(f"{player1.name} poisons {player2.name}'s Spock with a lizard.")
@@ -147,3 +149,4 @@ class Game:
     def declare_winner(self, winner):
         print ("____________________________________________________")
         print(f"{winner} wins!")
+        exit()
