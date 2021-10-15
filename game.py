@@ -114,7 +114,7 @@ class Game:
             print(f"{player2.name} covers {player1.name}'s rock with paper.")
             player2.wins += 1
         elif ((player2.gesture == "Rock") and (player1.gesture == "Lizard")):
-            print(f"{player2.name} crushes {player1.name}'s scissors with rock.")
+            print(f"{player2.name} crushes {player1.name}'s Lizard with rock.")
             player2.wins += 1
         elif ((player2.gesture == "Lizard") and (player1.gesture == "Spock")):
             print(f"{player2.name} poisons {player1.name}'s Spock with a lizard.")
