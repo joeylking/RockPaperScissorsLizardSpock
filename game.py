@@ -8,10 +8,12 @@ class Game:
         self.welcome()
 
     def welcome(self):
-        print ("____________________________________________________")
+        print (50 * "*")
         print (" ")
         print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!")
-        print ("____________________________________________________")
+        print (" ")
+        print (50 * "*")
+        print (" ")
         print ("Rules: ")
         print (" ")
         print ("Rock crushes Scissors")
@@ -25,17 +27,17 @@ class Game:
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
         print (" ")
-        print ("It is best out of 3 games.")
+        print ("Best out of 3 wins!")
         print (" ")
         self.choose_players()
 
 
     def choose_players(self):
-        print ("____________________________________________________")
+        print (50 * "-")
         print (" ")
         num_check = False
         while num_check == False:
-            num_input = input ("How many players?: ")
+            num_input = input ("How many players? ")
             if num_input == "1":
                 num_check = True
                 print ("One player chosen.")
@@ -52,20 +54,19 @@ class Game:
         if number_of_players == 1:
             player1 = Human()
             player2 = Computer()
-            self.players_list.append(player1)
-            self.players_list.append(player2)
+            self.players_list.extend([player1, player2])
             self.start_game()
         else:
             player1 = Human()
             player2 = Human()
-            self.players_list.append(player1)
-            self.players_list.append(player2)
+            self.players_list.extend([player1, player2])
             self.start_game()
 
     def start_game(self):
         player1 = self.players_list[0]
         player2 = self.players_list[1]
-        print ("____________________________________________________")
+        print (50 * "-")
+        print (" ")
         print(f"{player1.name} Vs. {player2.name}")
         print (" ")
         player1.choose_gesture(self.gestures_list)
@@ -73,6 +74,8 @@ class Game:
         self.compare(player1, player2)
 
     def compare(self, player1, player2):
+        print (" ")
+        print (" ")
         if player1.gesture == player2.gesture:
             print ("Draw")
         elif player1.gesture == "Rock":
@@ -150,6 +153,10 @@ class Game:
             self.compare(player1, player2)
             
     def declare_winner(self, winner):
-        print ("____________________________________________________")
+        print (" ")
+        print (50 * "!")
+        print (" ")
         print(f"{winner} wins!")
+        print (" ")
+        print (50 * "-")
         exit()
