@@ -10,4 +10,4 @@ class Computer(Player):
         i = random.randint(0, len(gestures) -1)
         self.gesture = gestures[i]
         print (" ")
-        print(f"The computer has chosen {gestures[i]}")
+        print(f"The computer has chosen {gestures[i].name}")

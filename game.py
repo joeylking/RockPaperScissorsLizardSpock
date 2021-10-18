@@ -12,6 +12,7 @@ class Game:
         self.welcome()
         number_of_players = self.choose_players()
         self.create_players(number_of_players)
+        self.create_gestures()
         self.start_game()
         winner = self.compare(self.players_list[0], self.players_list[1])
         self.declare_winner(winner)
@@ -102,74 +103,6 @@ class Game:
         else:
             print(f"{player1.name}'s {player1.gesture.name} beats {player2.name}'s {player2.gesture.name}")
             player1.wins += 1
-        # print (" ")
-        # print (" ")
-        # if player1.gesture == player2.gesture:
-        #     print ("Draw")
-        # elif player1.gesture.name == "Rock":
-        #     if player2.gesture == "Scissors" or player2.gesture == "Lizard":
-        #         print(f"{player1.name} crushes {player2.name}'s {player2.gesture} with a rock.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Paper":
-        #         print(f"{player2.name} covers {player1.name}'s rock with paper.")
-        #         player2.wins += 1
-        #     elif player2.gesture == "Spock":
-        #         print(f"{player2.name} vaporizes {player1.name}'s rock with Spock.")
-        #         player2.wins += 1
-        # elif player1.gesture == "Scissors":
-        #     if player2.gesture == "Paper":
-        #         print(f"{player1.name} cuts {player2.name}'s paper with scissors.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Lizard":
-        #         print(f"{player1.name} decapitates {player2.name}'s lizard with scissors.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Rock":
-        #         print(f"{player2.name} crushes {player1.name}'s scissors with rock.")
-        #         player2.wins += 1
-        #     elif player2.gesture == "Spock":
-        #         print(f"{player2.name} crushes {player1.name}'s scissors with Spock.")
-        #         player2.wins += 1
-        # elif player1.gesture == "Paper":
-        #     if player2.gesture == "Rock":
-        #         print(f"{player1.name} covers {player2.name}'s rock with paper.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Spock":
-        #         print(f"{player1.name} disproves {player2.name}'s Spock with a paper.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Scissors":
-        #         print(f"{player2.name} cuts {player1.name}'s paper with scissors.")
-        #         player2.wins += 1
-        #     elif player2.gesture == "Lizard":
-        #         print(f"{player2.name} eats {player1.name}'s paper with a lizard.")
-        #         player2.wins += 1
-        # elif player1.gesture == "Lizard": 
-        #     if player2.gesture == "Spock":
-        #         print(f"{player1.name} poisons {player2.name}'s Spock with a lizard.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Paper":
-        #         print(f"{player1.name} eats {player2.name}'s paper with a lizard.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Rock":
-        #         print(f"{player2.name} crushes {player1.name}'s lizard with a rock.")
-        #         player2.wins += 1
-        #     elif player2.gesture == "Scissors":
-        #         print(f"{player2.name} decapitates {player1.name}'s lizard with scissors.")
-        #         player2.wins += 1
-        # elif player1.gesture == "Spock":
-        #     if player2.gesture == "Scissors":
-        #         print(f"{player1.name} smashes {player2.name}'s scissors with Spock.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Rock":
-        #         print(f"{player1.name} vaporizes {player2.name}'s rock with Spock.")
-        #         player1.wins += 1
-        #     elif player2.gesture == "Paper":
-        #         print(f"{player2.name} disproves {player1.name}'s Spock with a paper.")
-        #         player2.wins += 1
-        #     elif player2.gesture == "Lizard":
-        #         print(f"{player2.name} poisons {player1.name}'s Spock with a lizard.")
-        #         player2.wins += 1
-        # else:
-        #     print ("error with comparing.")
 
         if player1.wins == 2:
             return (player1.name)

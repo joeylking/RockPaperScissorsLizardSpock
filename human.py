@@ -11,7 +11,7 @@ class Human(Player):
         loop = True
         while loop == True:
             for gesture in gestures:
-                print(f"{gestures.index(gesture) + 1} - {gesture}")
+                print(f"{gestures.index(gesture) + 1} - {gesture.name}")
             i = int(input()) - 1
             if i >= 0 and i < len(gestures):
                 loop = False
