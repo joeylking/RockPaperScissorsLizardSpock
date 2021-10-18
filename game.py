@@ -37,7 +37,7 @@ class Game:
         print (" ")
         num_check = False
         while num_check == False:
-            num_input = input ("How many players? ")
+            num_input = input ("How many players? [1/2] ")
             if num_input == "1":
                 num_check = True
                 print ("One player chosen.")
@@ -144,7 +144,7 @@ class Game:
             print ("error with comparing.")
 
         if player1.wins == 2:
-                self.declare_winner(player1.name)
+            self.declare_winner(player1.name)
         elif player2.wins == 2:
             self.declare_winner(player2.name)
         else:
