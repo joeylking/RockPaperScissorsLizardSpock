@@ -25,12 +25,12 @@ class Game:
         print ("Rules: ")
         print (" ")
         print ("Rock crushes Scissors")
-        print ("Scissors cuts Paper")
+        print ("Scissors cut Paper")
         print ("Paper covers Rock")
         print ("Rock crushes Lizard")
         print ("Lizard poisons Spock")
         print ("Spock smashes Scissors")
-        print ("Scissors decapitates Lizard")
+        print ("Scissors decapitate Lizard")
         print ("Lizard eats Paper")
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
@@ -45,7 +45,7 @@ class Game:
         print (" ")
         num_check = False
         while num_check == False:
-            num_input = input ("How many players? ")
+            num_input = input ("1 or 2 players? ")
             if num_input == "1":
                 num_check = True
                 print ("One player chosen.")
@@ -151,7 +151,11 @@ class Game:
             print ("error with comparing.")
 
         if player1.wins == 2:
+<<<<<<< HEAD
             return (player1.name)
+=======
+            self.declare_winner(player1.name)
+>>>>>>> 1142190c02dac436b5e2cfaaddb8ba3092dfc4fd
         elif player2.wins == 2:
             return (player2.name)
         else:
