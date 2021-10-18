@@ -18,7 +18,7 @@ class Game:
     def welcome(self):
         print (50 * "*")
         print (" ")
-        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!\n")
+        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!")
         print (" ")
         print (50 * "*")
         print (" ")
@@ -151,11 +151,7 @@ class Game:
             print ("error with comparing.")
 
         if player1.wins == 2:
-<<<<<<< HEAD
             return (player1.name)
-=======
-            self.declare_winner(player1.name)
->>>>>>> 1142190c02dac436b5e2cfaaddb8ba3092dfc4fd
         elif player2.wins == 2:
             return (player2.name)
         else:
