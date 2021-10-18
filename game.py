@@ -17,12 +17,12 @@ class Game:
         print ("Rules: ")
         print (" ")
         print ("Rock crushes Scissors")
-        print ("Scissors cuts Paper")
+        print ("Scissors cut Paper")
         print ("Paper covers Rock")
         print ("Rock crushes Lizard")
         print ("Lizard poisons Spock")
         print ("Spock smashes Scissors")
-        print ("Scissors decapitates Lizard")
+        print ("Scissors decapitate Lizard")
         print ("Lizard eats Paper")
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
@@ -37,7 +37,7 @@ class Game:
         print (" ")
         num_check = False
         while num_check == False:
-            num_input = input ("How many players? [1/2] ")
+            num_input = input ("1 or 2 players? ")
             if num_input == "1":
                 num_check = True
                 print ("One player chosen.")
