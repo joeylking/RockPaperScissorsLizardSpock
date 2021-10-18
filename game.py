@@ -1,9 +1,10 @@
 from human import Human
 from computer import Computer
+from gestures import Gesture
 
 class Game:
     def __init__(self):
-        self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+        self.gestures_list = []
         self.players_list = []
         self.run()
 
@@ -18,7 +19,7 @@ class Game:
     def welcome(self):
         print (50 * "*")
         print (" ")
-        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!")
+        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!\n")
         print (" ")
         print (50 * "*")
         print (" ")
@@ -38,6 +39,18 @@ class Game:
         print ("Best out of 3 wins!")
         print (" ")
         
+    def create_gestures(self):
+        rock = Gesture("Rock")
+        paper = Gesture("Paper")
+        scissors = Gesture("Scissors")
+        lizard = Gesture("Lizard")
+        spock = Gesture("Spock")
+        rock.loses_to = [paper, spock]
+        paper.loses_to = [scissors, lizard]
+        scissors.loses_to = [spock, rock]
+        lizard.loses_to = [scissors, rock]
+        spock.loses_to = [lizard, paper]
+        self.gestures_list.extend([rock, paper, scissors, lizard, spock])
 
 
     def choose_players(self):
@@ -85,7 +98,7 @@ class Game:
         print (" ")
         if player1.gesture == player2.gesture:
             print ("Draw")
-        elif player1.gesture == "Rock":
+        elif player1.gesture == rock:
             if player2.gesture == "Scissors" or player2.gesture == "Lizard":
                 print(f"{player1.name} crushes {player2.name}'s {player2.gesture} with a rock.")
                 player1.wins += 1
