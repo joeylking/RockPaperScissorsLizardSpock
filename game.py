@@ -5,12 +5,20 @@ class Game:
     def __init__(self):
         self.gestures_list = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
         self.players_list = []
+        self.run()
+
+    def run(self):
         self.welcome()
+        number_of_players = self.choose_players()
+        self.create_players(number_of_players)
+        self.start_game()
+        winner = self.compare(self.players_list[0], self.players_list[1])
+        self.declare_winner(winner)
 
     def welcome(self):
         print (50 * "*")
         print (" ")
-        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!")
+        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!\n")
         print (" ")
         print (50 * "*")
         print (" ")
@@ -29,7 +37,7 @@ class Game:
         print (" ")
         print ("Best out of 3 wins!")
         print (" ")
-        self.choose_players()
+        
 
 
     def choose_players(self):
@@ -41,26 +49,24 @@ class Game:
             if num_input == "1":
                 num_check = True
                 print ("One player chosen.")
-                self.create_players(1)
+                return 1
             elif num_input == "2":
                 print ("Two players chosen.")
                 num_check = True
-                self.create_players(2)
+                return 2
             else:
                 print ("Invalid option. Try again.")
-                self.choose_players()
+                return self.choose_players()
         
     def create_players(self, number_of_players):
         if number_of_players == 1:
             player1 = Human()
             player2 = Computer()
             self.players_list.extend([player1, player2])
-            self.start_game()
         else:
             player1 = Human()
             player2 = Human()
             self.players_list.extend([player1, player2])
-            self.start_game()
 
     def start_game(self):
         player1 = self.players_list[0]
@@ -71,7 +77,8 @@ class Game:
         print (" ")
         player1.choose_gesture(self.gestures_list)
         player2.choose_gesture(self.gestures_list)
-        self.compare(player1, player2)
+        return player1,player2
+       
 
     def compare(self, player1, player2):
         print (" ")
@@ -144,13 +151,13 @@ class Game:
             print ("error with comparing.")
 
         if player1.wins == 2:
-                self.declare_winner(player1.name)
+            return (player1.name)
         elif player2.wins == 2:
-            self.declare_winner(player2.name)
+            return (player2.name)
         else:
             player1.choose_gesture(self.gestures_list)
             player2.choose_gesture(self.gestures_list)
-            self.compare(player1, player2)
+            return self.compare(player1, player2)
             
     def declare_winner(self, winner):
         print (" ")
