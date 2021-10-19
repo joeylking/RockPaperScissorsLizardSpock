@@ -19,13 +19,9 @@ class Game:
 
     def welcome(self):
         print (50 * "*")
-        print (" ")
-        print ("Welcome to Rock, Paper, Scissors, Lizard, Spock!\n")
-        print (" ")
+        print ("\nWelcome to Rock, Paper, Scissors, Lizard, Spock!\n")
         print (50 * "*")
-        print (" ")
-        print ("Rules: ")
-        print (" ")
+        print ("\nRules: \n")
         print ("Rock crushes Scissors")
         print ("Scissors cut Paper")
         print ("Paper covers Rock")
@@ -36,9 +32,7 @@ class Game:
         print ("Lizard eats Paper")
         print ("Paper disproves Spock")
         print ("Spock vaporizes Rock")
-        print (" ")
-        print ("Best out of 3 wins!")
-        print (" ")
+        print ("\nBest out of 3 wins!\n")
         
     def create_gestures(self):
         rock = Gesture("Rock")
@@ -74,21 +68,19 @@ class Game:
         
     def create_players(self, number_of_players):
         if number_of_players == 1:
-            player1 = Human()
+            player1 = Human(1)
             player2 = Computer()
             self.players_list.extend([player1, player2])
         else:
-            player1 = Human()
-            player2 = Human()
+            player1 = Human(1)
+            player2 = Human(2)
             self.players_list.extend([player1, player2])
 
     def start_game(self):
         player1 = self.players_list[0]
         player2 = self.players_list[1]
         print (50 * "-")
-        print (" ")
-        print(f"{player1.name} Vs. {player2.name}")
-        print (" ")
+        print(f"\n{player1.name} Vs. {player2.name}\n")
         player1.choose_gesture(self.gestures_list)
         player2.choose_gesture(self.gestures_list)
         return player1,player2
@@ -115,8 +107,6 @@ class Game:
     def declare_winner(self, winner):
         print (" ")
         print (50 * "!")
-        print (" ")
-        print(f"{winner} wins!")
-        print (" ")
+        print(f"\n{winner} wins!\n")
         print (50 * "-")
         exit()
