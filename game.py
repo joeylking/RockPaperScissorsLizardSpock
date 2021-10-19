@@ -92,7 +92,6 @@ class Game:
         player1.choose_gesture(self.gestures_list)
         player2.choose_gesture(self.gestures_list)
         return player1,player2
-       
 
     def compare(self, player1, player2):
         if player1.gesture == player2.gesture:

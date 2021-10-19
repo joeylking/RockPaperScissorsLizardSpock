@@ -7,7 +7,6 @@ class Computer(Player):
         super().__init__()
 
     def choose_gesture(self, gestures):
-        i = random.randint(0, len(gestures) -1)
-        self.gesture = gestures[i]
+        self.gesture = random.choice(gestures)
         print (" ")
-        print(f"The computer has chosen {gestures[i].name}")
+        print(f"The computer has chosen {self.gesture.name}")
